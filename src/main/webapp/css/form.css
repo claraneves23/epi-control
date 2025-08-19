@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.simple-form table{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 15px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Labels mais discretas, sem negrito ou itálico */
+.simple-form label {
+    font-weight: normal;
+    font-style: normal;
+   	margin: 18px 0;
+    display: block;
+    color: white;
+}
+
+/* Inputs e selects */
+.simple-form input,
+.simple-form select {
+    padding: 8px 60px 8px 18px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.simple-form input[disabled] {
+    background-color: #e9ecef;
+    cursor: not-allowed;
+}
+
+.simple-form td:nth-child(2) {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.simple-form .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 15px; /* Espaço acima dos botões */
+}
+
+.simple-form input[type="submit"] {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0;
+}
+
+.simple-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.btn-cancelar {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin: 0;
+}
+.btn-cancelar :hover {
+    background-color: darkred;
+}
+
+h2 {
+    text-align: center;
+    margin: 15px 0; 
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para mensagens de erro do Struts */
+.action-error {
+    background-color: #ffe6e6; /* fundo vermelho claro */
+    color: #cc0000; /* texto vermelho */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    list-style-type: none; /* remove marcador de lista */
+}

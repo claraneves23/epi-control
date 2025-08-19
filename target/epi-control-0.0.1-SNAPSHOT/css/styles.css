@@ -1,0 +1,199 @@
+@charset "UTF-8";
+/* styles.css - Estilo Revisado para Lista de EPIs */
+
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Barra de Pesquisa - Ajustada para tags Struts */
+.search-container {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.search-field {
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo para o campo de texto Struts */
+.search-field input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Estilo para o botão de busca Struts */
+.btn-search input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.btn-search input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Tabela - Proporções ajustadas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 0.9rem;
+}
+
+thead {
+    background-color: #3498db;
+    color: white;
+}
+
+th {
+    padding: 0.75rem;
+    text-align: left;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Linhas vencidas (vermelho claro) */
+tr[style*="background-color: #ffcccc"] {
+    background-color: #ffcccc !important;
+}
+
+/* Coluna de Ações */
+.acoes {
+    white-space: nowrap;
+}
+
+.acoes a {
+    color: #7f8c8d;
+    margin: 0 5px;
+    font-size: 1rem;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.acoes a:hover {
+    color: #3498db;
+}
+
+.acoes a.fa-trash:hover {
+    color: #e74c3c;
+}
+
+/* Botão Cadastrar */
+.btn-cad {
+    text-align: right;
+    margin-top: 1rem;
+}
+
+.btn-cad p {
+    display: inline-block;
+    margin: 0;
+}
+
+.btn-cad a {
+    display: inline-block;
+    background-color: #2ecc71;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-cad a:hover {
+    background-color: #27ae60;
+}
+
+/* Layout responsivo para a barra de busca */
+@media (min-width: 768px) {
+    .search-container {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-end;
+    }
+    
+    .search-field {
+        flex-grow: 1;
+        margin-bottom: 0;
+    }
+    
+    .btn-search {
+        flex: 0 0 auto;
+    }
+    
+    .btn-search input[type="submit"] {
+        width: auto;
+        min-width: 100px;
+    }
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 767px) {
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    th, td {
+        padding: 0.5rem;
+    }
+}

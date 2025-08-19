@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <bean type="java.time.LocalDate" name="java.time.LocalDate" class="org.apache.struts2.util.StrutsTypeConverter"/>
+    <constant name="struts.devMode" value="true"/>
+    <constant name="struts.ognl.allowStaticMethodAccess" value="true"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+    <constant name="struts.custom.i18n.resources" value="global" />
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.date.format" value="yyyy-MM-dd"/>
+    <constant name="struts.configuration.xml.reload" value="true"/>
+    <constant name="struts.action.extension" value="action,"/>
+	<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+	<constant name="struts.enable.SlashesInActionNames" value="true"/>
+	<constant name="struts.allowed.methods" value="*"/>
+	<constant name="struts.strictMethodInvocation" value="false"/>
+	
+
+    <package name="default" extends="struts-default" namespace="/">
+    
+     <!--<interceptors>
+      <interceptor name="timer" class="org.apache.struts2.interceptor.TimerInterceptor" />
+    	<interceptor name="logger" class="org.apache.struts2.interceptor.LoggingInterceptor" />
+	    <interceptor-stack name="appDefaultStack">
+	      <interceptor-ref name="timer"/>
+          <interceptor-ref name="logger"/>
+	      <interceptor-ref name="exception"/> 
+	      <interceptor-ref name="defaultStack">
+	            <param name="exception.logEnabled">true</param>
+	            <param name="exception.logLevel">ERROR</param>
+	        </interceptor-ref>
+	    </interceptor-stack>
+	    </interceptors>-->
+
+      <default-interceptor-ref name="defaultStack" />
+    
+    	 <global-results>
+        	<result name="error">/view/error.jsp</result> <!-- Página global de erro -->
+    	</global-results>
+    
+        <action name="index">
+        	<result>/view/index.jsp</result>
+        </action>
+        
+        <action name="epiInputForm" class="com.epiadm.action.CadastrarEPIAction" method="exibirFormulario">
+    		<result name="input">/view/cadastroEPI.jsp</result>
+		</action>
+		
+		<action name="listarEPI" class="com.epiadm.action.ListarEPIAction">
+    		<result name="success">/view/listaEPI.jsp</result>
+    		<result name="input">/view/listaEPI.jsp</result> 
+    		<result name="error">/view/error.jsp</result>
+		</action>
+		
+        <action name="excluirEPI" class="com.epiadm.action.ExcluirEPIAction">
+    		<result name="success" type="redirectAction">listarEPI</result>
+    		<result name="error">/view/error.jsp</result>
+		</action>
+		
+		 <action name="buscarEPI" class="com.epiadm.action.BuscarEPIAction">
+    		<result name="success">/view/listaEPI.jsp</result>
+    		<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="carregarEdicaoEPI" class="com.epiadm.action.EditarEPIAction" method= "prepararEdicao">
+    		<result name="success">/view/cadastroEPI.jsp</result>
+    		<result name="input">/view/cadastroEPI.jsp</result>
+    		<result name="error">/view/error.jsp</result>
+		</action>
+		
+		<action name="salvarEdicaoEPI" class="com.epiadm.action.EditarEPIAction" method="execute">
+    		<result name="success" type="redirectAction">listarEPI</result>
+    		<result name="input">/view/cadastroEPI.jsp</result>
+		</action>
+        
+        
+       	 <action name="EPI" class="com.epiadm.action.CadastrarEPIAction" method="execute">
+        	<result name="success" type="redirectAction">listarEPI</result>
+        	<result name="input">/view/cadastroEPI.jsp</result>
+        </action>
+        
+    </package>
+</struts>

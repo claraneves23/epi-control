@@ -1,0 +1,85 @@
+<!DOCTYPE validators PUBLIC
+    "-//Apache Struts//XWork Validator 1.0.3//EN"
+    "https://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
+
+<validators>
+   
+  	 <field name="epiVO.nome">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Nome é obrigatório</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">3</param>
+            <param name="maxLength">100</param>
+            <message>Nome deve ter entre 3 e 100 caracteres</message>
+        </field-validator>
+    </field>
+
+    <!-- Validação do campo descrição -->
+    <field name="epiVO.descricao">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Descrição é obrigatória</message>
+        </field-validator>
+        <field-validator type="stringlength">
+            <param name="minLength">10</param>
+            <param name="maxLength">200</param>
+            <message>Descrição deve ter entre 10 e 200 caracteres</message>
+        </field-validator>
+    </field>
+
+    <!-- Validação do campo CA -->
+    <field name="epiVO.certificadoAprovacao">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>CA é obrigatório</message>
+        </field-validator>
+        <field-validator type="regex">
+            <param name="regex"><![CDATA[^\d{1,6}$]]></param>
+            <message>CA deve conter apenas números (1-6 dígitos)</message>
+        </field-validator>
+    </field>
+
+    <!-- Validação da Data de Cadastro (entrada BR, armazenamento ISO) -->
+    <field name="epiVO.dataCadastroStr">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Data de cadastro é obrigatória</message>
+        </field-validator>
+        <field-validator type="date">
+            <param name="dateFormat">dd/MM/yyyy</param>
+            <message>Formato inválido (use dd/mm/aaaa)</message>
+        </field-validator>
+        <field-validator type="conversion">
+            <message>Data de cadastro inválida</message>
+        </field-validator>
+    </field>
+
+    <!-- Validação da Validade do CA (entrada BR, armazenamento ISO) -->
+    <field name="epiVO.validadeCAStr">
+        <field-validator type="requiredstring" short-circuit="true">
+            <message>Validade do CA é obrigatória</message>
+        </field-validator>
+        <field-validator type="date">
+            <param name="dateFormat">yyyy-MM-dd</param>
+            <message>Formato inválido (use yyyy-MM-dd)</message>
+        </field-validator>
+        <field-validator type="conversion">
+            <message>Validade do CA inválida</message>
+        </field-validator>
+        <field-validator type="fieldexpression">
+            <param name="expression"><![CDATA[epiVO.validadeCAStr >= epiVO.dataCadastroStr]]></param>
+            <message>Validade deve ser posterior à data de cadastro</message>
+        </field-validator>
+    </field>
+
+     <field name="epiVO.classeRisco">
+        <field-validator type="required" short-circuit="true">
+            <message>Selecione uma classe de risco</message>
+        </field-validator>
+    </field>
+
+    <!-- Validação do Status -->
+    <field name="epiVO.status">
+        <field-validator type="required" short-circuit="true">
+            <message>Selecione o status</message>
+        </field-validator>
+    </field>
+</validators>
