@@ -5,15 +5,15 @@ A aplicação permite o cadastro, edição, exclusão e busca de EPIs, facilitan
 
 ## 🚀 Funcionalidades
 
-✅ Cadastro de novos EPIs (nome, categoria, descrição, etc.)
+- ✅ Cadastro de novos EPIs (nome, categoria, descrição, etc.)
 
-🔍 Busca de EPIs por nome
+- 🔍 Busca de EPIs por nome
 
-✏️ Edição de informações de EPIs cadastrados
+- ✏️ Edição de informações de EPIs cadastrados
 
-❌ Exclusão de EPIs do sistema
+- ❌ Exclusão de EPIs do sistema
 
-📋 Listagem geral de EPIs registrados
+- 📋 Listagem geral de EPIs registrados
 
 ## 🛠️ Tecnologias Utilizadas
 
