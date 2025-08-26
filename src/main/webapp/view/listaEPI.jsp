@@ -9,7 +9,8 @@
 <meta charset="UTF-8">
 <title>Lista de EPIs</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="${pageContext.request.contextPath}/css/styles.css?v=2.2" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/styles.css?v=2.7" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <header>
@@ -27,7 +28,7 @@
 	<table>
 		<thead>
 			<tr>
-				<th>Nome</th>
+				<th>Equipamento</th>
 				<th>Descrição</th>
 				<th>CA</th>
 				<th>Validade do CA</th>
@@ -38,8 +39,7 @@
 		</thead>
 		<tbody>
 			<s:iterator value="listaParaExibir" var="epi">
-				<tr style="background-color: <s:property value="vencido ? '#ffcccc' : 'transparent'"/>;">
-				    <td><s:hidden name="epiVO.id" value="%{#epi.id}" />
+			 <tr class="<s:property value='%{!status ? "inativo" : ""}'/>" data-id="<s:property value='id'/>">
 					<td><s:property value="nome"/></td>
 					<td><s:property value="descricao"/></td>
 					<td><s:property value="certificadoAprovacao"/></td>

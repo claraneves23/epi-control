@@ -16,21 +16,21 @@ public class ListarEPIAction extends ActionSupport {
 	
 	private EpiVO epiVO = new EpiVO();
 	private List<EpiVO> listaParaExibir;
+	private EPIBusiness epiBusiness = new EPIBusiness();
 	
 	public String execute() {
 		
 		try {
 			
-			new EPIBusiness().desativarEPIsVencidos();
+			epiBusiness.desativarEPIsVencidos();
 			listaParaExibir = new EPIDAO().listarTodos();
-			
 			return SUCCESS;
+			
 		} catch (Exception e) {
 			addActionError("Erro ao listar EPIs: " + e.getMessage());
 			return ERROR;
 		}
 	}
-	
 	
 
 	public List<EpiVO> getListaParaExibir() {

@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-/* styles.css - Estilo Revisado para Lista de EPIs */
 
 /* Reset e Estilos Gerais */
 * {
@@ -98,6 +97,15 @@ th {
     font-size: 0.85rem;
     text-align: center;
 }
+
+.inativo{
+   background-color: #F0404B;
+}
+
+.inativo:hover{
+	 background-color: #FAA19B;
+}
+
 
 td {
     padding: 0.75rem;

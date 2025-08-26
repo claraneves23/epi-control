@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>Cadastro de EPI</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="${pageContext.request.contextPath}/css/NewFile.css?v=2.5" rel="stylesheet">
+<link href="${pageContext.request.contextPath}/css/form.css?v=2.5" rel="stylesheet">
 <s:head theme="simple"/>
 </head>
 <body>
@@ -22,7 +22,7 @@
             <s:hidden name="epiVO.id" />
             
             <div class="form-row">
-            <label for="epiVO.nome">Nome:</label>
+            <label for="epiVO.nome">Equipamento:</label>
                 <s:textfield name="epiVO.nome" cssClass="form-input"/>
             </div>
             

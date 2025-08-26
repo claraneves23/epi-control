@@ -15,7 +15,6 @@ import com.opensymphony.xwork2.ActionSupport;
 public class CadastrarEPIAction extends ActionSupport {
 
 	private EpiVO epiVO = new EpiVO();
-	private List<EpiVO> listaParaExibir;
 	
 
 	public String exibirFormulario() {
@@ -50,9 +49,6 @@ public class CadastrarEPIAction extends ActionSupport {
 	}
 
 
-	public void setListaParaExibir(List<EpiVO> listaParaExibir) {
-		this.listaParaExibir = listaParaExibir;
-	}
 	
 	 
 	

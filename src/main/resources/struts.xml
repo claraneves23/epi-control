@@ -41,8 +41,9 @@
         	<result name="error">/view/error.jsp</result> <!-- Página global de erro -->
     	</global-results>
     
-        <action name="index">
-        	<result>/view/index.jsp</result>
+        <action name="login" class="com.epiadm.action.UserLoginAction" method="execute">
+        	<result name="success" type="redirectAction">listarEPI</result>
+        	<result name="input">/view/index.jsp</result>
         </action>
         
         <action name="epiInputForm" class="com.epiadm.action.CadastrarEPIAction" method="exibirFormulario">

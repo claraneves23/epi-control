@@ -2,8 +2,6 @@ package com.epiadm.business;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.logging.Logger;
 
 import com.epiadm.dao.EPIDAO;
 import com.epiadm.vo.EpiVO;
@@ -71,6 +69,11 @@ public class EPIBusiness {
 	    if (epi.getCertificadoAprovacao() == null || epi.getCertificadoAprovacao().trim().isEmpty()) {
 	        throw new Exception("O campo 'Certificado de Aprovação' é obrigatório.");
 	    }
+	    
+	    if (epi.getCertificadoAprovacao().length() > 6) {
+	    	 throw new Exception("O campo 'Certificado de Aprovação' deve ter no máximo 6 números.");
+	    }
+	    
 	    if (epi.getValidadeCA() == null) {
 	        throw new Exception("O campo 'Validade do CA' é obrigatório.");
 	    }
